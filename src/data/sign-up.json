@@ -1,5 +1,6 @@
 {
   "title": "Working with POST request",
+  "titleOnSubmit": "User successfully registered",
   "form": {
     "btn_text": "Sign up"
   }

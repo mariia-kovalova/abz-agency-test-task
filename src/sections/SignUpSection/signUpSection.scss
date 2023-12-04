@@ -1,0 +1,4 @@
+.success-sign-up::after {
+  @apply mx-auto block h-[247px] w-[280px] bg-cover bg-center bg-no-repeat content-[""] sm:h-[290px] sm:w-[328px];
+  background-image: url('src/images/success-sign-up.svg');
+}
