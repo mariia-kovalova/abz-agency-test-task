@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { FieldValues } from 'react-hook-form';
+import { IPosition } from 'src/types/Position';
 import { IUser } from 'src/types/User';
 
 axios.defaults.baseURL =
@@ -21,7 +22,7 @@ const getUsers = async (
 const createUser = async (
   formData: FieldValues,
   token: string,
-): Promise<{ user_id: number }> => {
+): Promise<{ success: boolean; user_id: number }> => {
   const { data } = await axios.post('/users', formData, {
     headers: {
       Token: token,
@@ -30,12 +31,12 @@ const createUser = async (
   return data;
 };
 
-const getUserById = async (id: string): Promise<IUser> => {
+const getUserById = async (id: string): Promise<{ user: IUser }> => {
   const { data } = await axios.get(`/users/${id}`);
   return data;
 };
 
-const getPositions = async (): Promise<{ id: number; name: string }> => {
+const getPositions = async (): Promise<{ positions: IPosition[] }> => {
   const { data } = await axios.get('/positions');
   return data;
 };

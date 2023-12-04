@@ -1,5 +1,5 @@
 import { API } from 'src/api/testTaskApi';
-import { IUsersState } from 'src/types/Users';
+import { IUsersState } from 'src/types/UsersState';
 import { create } from 'zustand';
 
 import data from 'src/data/users.json';
