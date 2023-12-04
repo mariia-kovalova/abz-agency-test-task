@@ -1,0 +1,7 @@
+.hero {
+  @apply bg-cover bg-center bg-no-repeat;
+  background-image: image-set(
+    'src/images/hero.webp' 1x,
+    'src/images/hero@2x.webp' 2x
+  );
+}
