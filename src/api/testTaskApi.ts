@@ -18,7 +18,10 @@ const getAllUsers = async (
   return data;
 };
 
-const createUser = async (formData: FieldValues, token: string) => {
+const createUser = async (
+  formData: FieldValues,
+  token: string,
+): Promise<{ user_id: number }> => {
   const { data } = await axios.post('/users', formData, {
     headers: {
       Token: token,
@@ -32,12 +35,12 @@ const getUserById = async (id: string): Promise<IUser> => {
   return data;
 };
 
-const getPositions = async () => {
+const getPositions = async (): Promise<{ id: number; name: string }> => {
   const { data } = await axios.get('/positions');
   return data;
 };
 
-const getToken = async () => {
+const getToken = async (): Promise<{ token: string }> => {
   const { data } = await axios.get('/token');
   return data;
 };

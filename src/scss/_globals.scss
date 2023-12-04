@@ -17,7 +17,7 @@
 }
 
 .wrapper {
-  @apply mx-auto max-w-[1280px] px-4 md:px-8 xl:px-[60px] xxl:px-14;
+  @apply px-4 md:px-8 xl:px-[60px] xxl:mx-auto xxl:w-[1170px] xxl:px-0;
 }
 
 .button,
