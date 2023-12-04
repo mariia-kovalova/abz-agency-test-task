@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import { useState } from 'react';
 
 import { Form } from 'src/components/Form';
-
 import { sign_up_section } from 'src/data/links';
 import data from 'src/data/sign-up.json';
 import './signUpSection.scss';
@@ -22,9 +21,7 @@ export const SignUpSection = () => {
         <h2 className="heading mb-[50px]">
           {!isSubmitted ? title : titleOnSubmit}
         </h2>
-        {!isSubmitted ? (
-          <Form onFormSubmit={() => setIsSubmitted(true)} />
-        ) : null}
+        {!isSubmitted ? <Form onFormSubmit={setIsSubmitted} /> : null}
       </div>
     </section>
   );

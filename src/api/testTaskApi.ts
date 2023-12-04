@@ -22,7 +22,7 @@ const getUsers = async (
 const createUser = async (
   formData: FieldValues,
   token: string,
-): Promise<{ success: boolean; user_id: number }> => {
+): Promise<{ success: boolean }> => {
   const { data } = await axios.post('/users', formData, {
     headers: {
       Token: token,

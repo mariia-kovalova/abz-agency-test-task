@@ -1,0 +1,39 @@
+.field-transition {
+  @apply transition duration-200 ease-in-out;
+}
+
+.field {
+  @apply relative h-[54px];
+
+  // when label is focused
+  &:focus-within > .field-label,
+  // when user has entered some text
+  .field-input:not(:placeholder-shown) + .field-label {
+    @apply -translate-y-[36px] text-[12px] font-medium leading-[14px];
+
+    &::before {
+      @apply opacity-100;
+    }
+  }
+}
+
+.field-input {
+  @apply h-full w-full rounded border border-gray-100 bg-white px-4 py-[14px];
+
+  // instead of the placeholder user can see the label
+  &::placeholder {
+    @apply text-transparent;
+  }
+
+  &:focus {
+    @apply outline-none;
+  }
+}
+
+.field-label {
+  @apply field-transition absolute left-4 top-1/2 -translate-y-1/2 text-gray-300;
+
+  &::before {
+    @apply field-transition absolute left-[-4px] top-[8.6px] z-[-1] h-2 w-[calc(100%+8px)] bg-white opacity-0 content-[""];
+  }
+}

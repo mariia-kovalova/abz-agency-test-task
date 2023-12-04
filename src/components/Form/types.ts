@@ -1,3 +1,3 @@
 export interface FormProps {
-  onFormSubmit: () => void;
+  onFormSubmit: (success: boolean) => void;
 }

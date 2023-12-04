@@ -2,6 +2,40 @@
   "title": "Working with POST request",
   "titleOnSubmit": "User successfully registered",
   "form": {
+    "fields": [
+      {
+        "id": "sign_up_name",
+        "type": "text",
+        "name": "name",
+        "label": "Your name",
+        "helper": "",
+        "placeholder": "Your name"
+      },
+      {
+        "id": "sign_up_email",
+        "type": "email",
+        "name": "email",
+        "label": "Email",
+        "helper": "",
+        "placeholder": "Email"
+      },
+      {
+        "id": "sign_up_phone",
+        "type": "tel",
+        "name": "phone",
+        "label": "Phone",
+        "helper": "+38 (XXX) XXX - XX - XX",
+        "placeholder": "Phone"
+      }
+    ],
+    "positions_title": "Select your position",
+    "upload": {
+      "id": "sign_up_upload",
+      "name": "photo",
+      "label": "Upload",
+      "placeholder": "Upload your photo"
+    },
+    "storage_key": "sign_up_form",
     "btn_text": "Sign up"
   }
 }
