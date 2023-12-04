@@ -1,19 +1,19 @@
-import { UsersList } from 'src/components/UsersList';
 import { usePagination } from 'src/hooks/usePagination';
 
-import { users_section } from 'src/data/links';
-import data from 'src/data/users.json';
+import { UsersList } from 'src/components/UsersList';
 import { Loader } from 'src/components/Loader';
 import { OnError } from 'src/components/OnError';
 
-const { title, count, btn_text } = data;
+import { users_section } from 'src/data/links';
+import data from 'src/data/users.json';
+
+const { title, btn_text } = data;
 
 export const UsersSection = () => {
-  const { users, isLoading, isError, isMore, handleLoadMore } =
-    usePagination(count);
+  const { users, isLoading, isError, isMore, handleLoadMore } = usePagination();
 
   const showUsers = users.length > 0 && !isError;
-  const showButton = !isLoading && !isError && isMore;
+  const showButton = !isLoading && isMore;
 
   return (
     <section id={users_section} className="section mt-[70px]">

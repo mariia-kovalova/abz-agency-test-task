@@ -5,7 +5,7 @@ import { IUser } from 'src/types/User';
 axios.defaults.baseURL =
   'https://frontend-test-assignment-api.abz.agency/api/v1';
 
-const getAllUsers = async (
+const getUsers = async (
   page: number,
   count: number,
 ): Promise<{ total_users: number; users: IUser[] }> => {
@@ -46,7 +46,7 @@ const getToken = async (): Promise<{ token: string }> => {
 };
 
 export const API = {
-  getAllUsers,
+  getUsers,
   createUser,
   getUserById,
   getPositions,
