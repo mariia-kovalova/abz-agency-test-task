@@ -1,0 +1,9 @@
+@import "@fontsource/nunito";
+
+body {
+  @apply font-nunito text-[16px] font-normal leading-[26px] bg-body text-black-light;
+}
+
+.heading {
+  @apply text-[40px] leading-[40px] text-center;
+}

@@ -1,0 +1,43 @@
+.common-transition {
+  @apply transition duration-300 ease-in-out;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.section {
+  @apply pb-[70px] pt-[70px];
+}
+
+.wrapper {
+  @apply mx-auto max-w-[1280px] px-4 md:px-8 xl:px-[60px] xxl:px-14;
+}
+
+.button,
+.button-link {
+  @apply common-transition block w-fit min-w-[100px] rounded-[80px] bg-primary px-[18px] py-1 text-center;
+}
+
+.button-link {
+  @apply hover:bg-primary-hover focus:bg-primary-hover active:bg-primary-hover;
+}
+
+.button {
+  @apply cursor-pointer;
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    @apply bg-primary-hover;
+  }
+
+  &:disabled {
+    @apply cursor-default bg-gray-200 text-white-light;
+  }
+}
