@@ -5,6 +5,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "baseUrl": "./",
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -20,6 +21,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["abz-agency-test-task/src"],
+  "include": ["abz-agency-test-task/src", "src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
