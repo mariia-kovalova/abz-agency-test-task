@@ -9,7 +9,6 @@ export const usePositions = () => {
 
   useEffect(() => {
     const getPositions = async () => {
-
       try {
         setIsError(false);
         setIsLoading(true);

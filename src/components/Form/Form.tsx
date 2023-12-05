@@ -1,18 +1,21 @@
 import { usePositions, useToken } from 'src/hooks';
 import { FieldValues, useForm } from 'react-hook-form';
-import useFormPersist from 'react-hook-form-persist';
 import { yupResolver } from '@hookform/resolvers/yup';
+import useFormPersist from 'react-hook-form-persist';
 
+import { Field } from 'src/components/Field';
 import { PositionsList } from 'src/components/PositionsList';
 import { Loader } from 'src/components/Loader';
 import { OnError } from 'src/components/OnError';
 
-import { API } from 'src/api/testTaskApi';
 import { FormProps } from './types';
+import { API } from 'src/api/testTaskApi';
 import data from 'src/data/sign-up.json';
-import { Field } from '../Field';
 
-const { storage_key, fields, positions_title, upload, btn_text } = data.form;
+// https://drive.google.com/file/d/11XPGP9wrHB-B5aLlBCRLXHVA2yvM2QhY/view
+// https://github.com/mariia-kovalova/test_task/tree/main
+
+const { storage_key, fields, radio, upload, btn_text } = data.form;
 
 export const Form: React.FC<FormProps> = ({ onFormSubmit }) => {
   const { positions, isLoading, isError } = usePositions();
@@ -54,10 +57,9 @@ export const Form: React.FC<FormProps> = ({ onFormSubmit }) => {
         ))}
       </ul>
 
-      <p className="mt-[43px]">{positions_title}</p>
-
+      <p className="mb-[11px] mt-[43px]">{radio.title}</p>
       {showPositions ? (
-        <PositionsList className="mt-[11px]" positions={positions} />
+        <PositionsList positions={positions} register={register} />
       ) : null}
       {isLoading ? <Loader /> : null}
       {isError ? <OnError /> : null}

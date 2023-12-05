@@ -1,0 +1,34 @@
+.radio-transition {
+  @apply transition duration-200 ease-in-out;
+}
+
+.radio-input {
+  & + .radio-label {
+    @apply relative cursor-pointer pl-8;
+  }
+
+  & + .radio-label:after,
+  & + .radio-label:before {
+    @apply radio-transition absolute left-0 top-0 h-5 w-5 content-[""];
+  }
+
+  & + .radio-label:before {
+    @apply rounded-full border-[2px] border-gray-100 bg-transparent;
+  }
+
+  & + .radio-label:after {
+    @apply bg-[url('src/images/radio-circle.svg')] bg-cover bg-center bg-no-repeat;
+  }
+
+  &:checked + .radio-label:before {
+    @apply border-secondary;
+  }
+
+  &:not(:checked) + .radio-label:after {
+    @apply scale-0 opacity-0;
+  }
+
+  &:checked + .radio-label:after {
+    @apply scale-100 opacity-100;
+  }
+}

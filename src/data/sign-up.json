@@ -28,13 +28,17 @@
         "placeholder": "Phone"
       }
     ],
-    "positions_title": "Select your position",
+    "radio": {
+      "title": "Select your position",
+      "name": "position"
+    },
     "upload": {
       "id": "sign_up_upload",
       "name": "photo",
       "label": "Upload",
       "placeholder": "Upload your photo"
     },
+    "validation": {},
     "storage_key": "sign_up_form",
     "btn_text": "Sign up"
   }
