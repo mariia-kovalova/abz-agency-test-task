@@ -12,10 +12,12 @@ import { appendValues } from 'src/utils';
 import { FormProps } from './types';
 import { schema } from 'src/data/schema';
 import data from 'src/data/sign-up.json';
+import clsx from 'clsx';
 
 const { storage_key, fields, radio, upload, btn_text } = data.form;
 
 export const Form: React.FC<FormProps> = ({
+  className,
   positions,
   token,
   onFormSubmit,
@@ -39,15 +41,17 @@ export const Form: React.FC<FormProps> = ({
     appendValues(formData, values);
     try {
       const { success } = await API.createUser(formData, token);
-      reset();
       onFormSubmit(success);
+      reset();
     } catch (error) {
       console.log(error);
     }
   };
 
+  const formClasses = clsx('mx-auto max-w-[380px]', className);
+
   return (
-    <form className="mx-auto max-w-[380px]" onSubmit={handleSubmit(onSubmit)}>
+    <form className={formClasses} onSubmit={handleSubmit(onSubmit)}>
       <ul className="flex flex-col gap-[50px]">
         {fields.map(field => (
           <li key={field.id}>

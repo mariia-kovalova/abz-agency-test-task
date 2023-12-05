@@ -15,6 +15,8 @@ export const schema = Yup.object().shape({
     .matches(new RegExp(email.pattern.regexp), email.pattern.message)
     .required(required),
   phone: Yup.string()
+    .min(phone.min_length.value, phone.min_length.message)
+    .max(phone.max_length.value, phone.max_length.message)
     .matches(new RegExp(phone.pattern.regexp), phone.pattern.message)
     .required(required),
   position_id: Yup.number()

@@ -14,12 +14,16 @@ const { title, titleOnSubmit } = data;
 
 export const SignUpSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const refreshUsers = useUsersStore(state => state.reloadUsers);
   const { positions, isLoading, isError } = usePositions();
+  const refreshUsers = useUsersStore(state => state.reloadUsers);
   const token = useToken();
 
   const sectionClasses = clsx('wrapper', {
     'success-sign-up': isSubmitted,
+  });
+
+  const formClasses = clsx({
+    'visually-hidden': isSubmitted,
   });
 
   const handleFormSubmit = (success: boolean) => {
@@ -36,8 +40,9 @@ export const SignUpSection = () => {
         <h2 className="heading mb-[50px]">
           {!isSubmitted ? title : titleOnSubmit}
         </h2>
-        {showForm && !isSubmitted ? (
+        {showForm ? (
           <Form
+            className={formClasses}
             positions={positions}
             token={token}
             onFormSubmit={handleFormSubmit}
