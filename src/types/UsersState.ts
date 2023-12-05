@@ -8,4 +8,5 @@ export interface IUsersState {
   isError: boolean;
   getUsers: (page: number) => void;
   setPage: (page: number) => void;
+  reloadUsers: () => void;
 }

@@ -1,5 +1,5 @@
 .radio-transition {
-  @apply transition duration-200 ease-in-out;
+  @apply transition duration-300 ease-in-out;
 }
 
 .radio-input {
@@ -12,6 +12,10 @@
     @apply radio-transition absolute left-0 top-0 h-5 w-5 content-[""];
   }
 
+  & + .radio-label:after {
+    @apply scale-0 opacity-0;
+  }
+
   & + .radio-label:before {
     @apply rounded-full border-[2px] border-gray-100 bg-transparent;
   }
@@ -22,10 +26,6 @@
 
   &:checked + .radio-label:before {
     @apply border-secondary;
-  }
-
-  &:not(:checked) + .radio-label:after {
-    @apply scale-0 opacity-0;
   }
 
   &:checked + .radio-label:after {

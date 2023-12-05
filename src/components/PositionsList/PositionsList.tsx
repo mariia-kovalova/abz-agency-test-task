@@ -14,9 +14,9 @@ export const PositionsList: React.FC<PositionsListProps> = ({
       {positions.map(({ id, name }) => (
         <li key={id}>
           <Radio
+            id={id.toString()}
             value={id}
             label={name}
-            id={id.toString()}
             register={register}
           />
         </li>

@@ -16,7 +16,7 @@ export const useUsersStore = create<IUsersState>(set => ({
       set({ isLoading: true, isError: false });
       const { users, total_users } = await API.getUsers(page, data.count);
       set(state => ({
-        users: page === 1 ? users : [...state.users, ...users],
+        users: [...state.users, ...users],
         totalUsers: total_users,
       }));
     } catch (error) {
@@ -28,5 +28,20 @@ export const useUsersStore = create<IUsersState>(set => ({
   },
   setPage: page => {
     set({ page });
+  },
+  reloadUsers: async () => {
+    try {
+      set({ isLoading: true, isError: false });
+      const { users, total_users } = await API.getUsers(1, data.count);
+      set({
+        users: users,
+        totalUsers: total_users,
+      });
+    } catch (error) {
+      set({ isError: true });
+      console.log(error);
+    } finally {
+      set({ isLoading: false });
+    }
   },
 }));

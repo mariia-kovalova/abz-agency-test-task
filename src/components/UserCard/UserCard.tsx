@@ -1,4 +1,4 @@
-import { textNormalize } from 'src/utils/textNormalize';
+import { textNormalize } from 'src/utils';
 import { UserCardProps } from './types';
 
 export const UserCard: React.FC<UserCardProps> = ({ user }) => {

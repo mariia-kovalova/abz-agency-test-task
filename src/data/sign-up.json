@@ -30,15 +30,65 @@
     ],
     "radio": {
       "title": "Select your position",
-      "name": "position"
+      "name": "position_id"
     },
     "upload": {
       "id": "sign_up_upload",
       "name": "photo",
       "label": "Upload",
+      "helper": "",
       "placeholder": "Upload your photo"
     },
-    "validation": {},
+    "validation": {
+      "required": "This field is required",
+      "name": {
+        "min_length": {
+          "value": 2,
+          "message": "Name should contain 2-60 characters"
+        },
+        "max_length": {
+          "value": 60,
+          "message": "Name should contain 2-60 characters"
+        }
+      },
+      "email": {
+        "min_length": {
+          "value": 2,
+          "message": "Email should contain 2-100 characters"
+        },
+        "max_length": {
+          "value": 100,
+          "message": "Email should contain 2-100 characters"
+        },
+        "pattern": {
+          "regexp": "^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)])$",
+          "message": "Invalid email"
+        }
+      },
+      "phone": {
+        "pattern": {
+          "regexp": "^[\\+]{0,1}380([0-9]{9})$",
+          "message": "Number should start with code of Ukraine +380"
+        }
+      },
+      "position_id": {
+        "min": { "value": 1, "message": "Invalid format" }
+      },
+      "photo": {
+        "type": {
+          "value": "image/jpeg",
+          "message": "The photo must be in JPEG/JPG format"
+        },
+        "size": {
+          "value": 5242880,
+          "message": "The photo size must not exceed 5 MB"
+        },
+        "dimantions": {
+          "value": 70,
+          "message": "Minimum photo size required: 70x70 pixels"
+        }
+      }
+    },
     "storage_key": "sign_up_form",
     "btn_text": "Sign up"
   }

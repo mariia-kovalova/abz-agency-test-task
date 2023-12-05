@@ -15,11 +15,11 @@ export const Field: React.FC<FieldProps> = ({
 }) => {
   const isError = !!errors[name];
 
-  const inputClasses = clsx('field-input', {
+  const inputClasses = clsx('field-input common-transition', {
     'border-[2px] border-red': isError,
   });
 
-  const labelClasses = clsx('field-label', {
+  const labelClasses = clsx('field-label common-transition', {
     'text-red': isError,
   });
 
@@ -32,9 +32,11 @@ export const Field: React.FC<FieldProps> = ({
         id={id}
         {...register(name)}
       />
+
       <label className={labelClasses} htmlFor={id}>
         {label}
       </label>
+
       <Helper name={name} helper={helper} errors={errors} />
     </div>
   );
