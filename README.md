@@ -1,30 +1,34 @@
-# React + TypeScript + Vite
+# TESTTASK
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+See the live page here - [demo](https://abz-agency-test-task-phi.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Титульне зображення сайту](./public/fb.png)
 
-## Expanding the ESLint configuration
+## 📝 About the project:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Non-commercial test project for [abz.agency](https://abz.agency/)
 
-- Configure the top-level `parserOptions` property like this:
+## 📝 Technologies used:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Vite
+- React
+- Sass
+- Tailwind
+- TypeScript
+- axios
+- clsx
+- react-hook-form
+- yup
+- zustand
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 📝 Live page tests results:
+
+⭐Performance: 99
+
+⭐Accessibility: 95
+
+⭐Best practices: 91
+
+⭐SEO: 100
