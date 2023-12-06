@@ -1,9 +1,6 @@
 {
   "logo": {
     "aria": "test task logo",
-    "img": {
-      "src": "src/images/logo.png",
-      "alt": "test task logo"
-    }
+    "alt": "test task logo"
   }
 }
