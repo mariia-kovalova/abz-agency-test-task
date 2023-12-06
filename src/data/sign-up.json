@@ -68,15 +68,15 @@
       "phone": {
         "min_length": {
           "value": 12,
-          "message": "Phone number should contain 12 numerics"
+          "message": "Number should contain 12 numerics"
         },
         "max_length": {
           "value": 13,
-          "message": "Phone number should contain 12 numerics"
+          "message": "Number should contain 12 numerics"
         },
         "pattern": {
           "regexp": "^[\\+]{0,1}380([0-9]{9})$",
-          "message": "Number should start with code of Ukraine +380"
+          "message": "Number should start with +380 and contain 12 numerics"
         }
       },
       "position_id": {

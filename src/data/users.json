@@ -1,5 +1,6 @@
 {
   "title": "Working with GET request",
   "count": 6,
+  "max_characters": 30,
   "btn_text": "Show more"
 }
